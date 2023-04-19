@@ -18,15 +18,16 @@ export default function Home() {
     const prompt = document.getElementById("prompt").innerText;
     document.getElementById("prompt").innerText = "";
 
-    const completion = await openai.createCompletion({
-      model: "ft-5L292buSWulS99QcUMR1K8Re",
-      engine: "davinci",
-      prompt: prompt,
+    const completion = await openai.createChatCompletion({
+      model: "gpt-3.5-turbo",
+      messages: [{role: "user", content: prompt}],
     });
 
-    setMessages([...messages, { prompt: prompt, response: completion.data.choices[0].text }]);
+    console.log(completion);
 
-    console.log(messages[messages.length-1]);
+    setMessages([...messages, { prompt: prompt, response: completion.data.choices[0].message.content }]);
+
+    //console.log(messages[messages.length - 1]);
     setLoading(false);
   };
 
@@ -52,10 +53,10 @@ export default function Home() {
       </Head>
       <div class="fixed bottom-0 w-min p-5">
         <div class={`rounded-md p-3 bg-emerald-800 transition-all shadow-md ${info ? "opacity-100" : "opacity-0"}`}>
-          <p class="text-md text-gray-200 transition-all">Hello, this is my submission for my ISP.</p>
-          <p class="text-md text-gray-200 mt-3 transition-all">It is a chatbot AI thing that "attempts" to imitate the writing style of Mr. Chalk.</p>
-          <p class="text-md text-gray-200 mt-3 transition-all">Due to a lack of quality training data, it tends to produce a garbled output that somewhat resembles schoology assignments.</p>
-          <p class="text-md text-gray-200 mt-3 transition-all">Works "best" in Google Chrome.</p>
+          <p className="text-md text-gray-200 transition-all">Hello, this is my submission for my ISP.</p>
+          <p className="text-md text-gray-200 mt-3 transition-all">It is a chatbot AI thing that "attempts" to imitate the writing style of Mr. Chalk.</p>
+          <p className="text-md text-gray-200 mt-3 transition-all">Due to a lack of quality training data, it tends to produce a garbled output that somewhat resembles schoology assignments.</p>
+          <p className="text-md text-gray-200 mt-3 transition-all">Works "best" in Google Chrome.</p>
         </div>
         <div class="p-4 mt-5 bg-emerald-700 text-white shadow-md w-min rounded-md none transition-all">
           <h1 class="text-2xl w-max font-bold">ChalkGPT by Justin Lopato</h1>
