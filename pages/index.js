@@ -40,7 +40,7 @@ export default function Home() {
 
   useEffect(() => {
     window.scrollTo(0, document.body.scrollHeight);
-  }, [messages]);
+  }, [messages, loading]);
 
   return (
     <main>
@@ -72,7 +72,7 @@ export default function Home() {
           {messages.map((message, messageIdx) =>
             <div
               key={messageIdx}
-              class="w-full p-5 mx-5 mt-5 rounded-md bg-emerald-800 shadow-md text-white transition-all hover:-tranemerald-y-1 hover:shadow-lg hover:bg-[rgb(89,63,47)]"
+              class="w-full p-5 mx-5 mt-5 rounded-md bg-emerald-800 shadow-md text-white transition-all hover:-tranemerald-y-1 hover:shadow-lg hover:bg-[rgb(89,63,47)] break-words"
               style={{ cursor: "pointer" }}
               onClick={() => { setMessages(messages.filter((m) => m !== message)) }}
             >
