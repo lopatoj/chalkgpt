@@ -1,7 +1,7 @@
 const { Configuration, OpenAIApi } = require("openai");
 
 const configuration = new Configuration({
-  model: "ft-fckZczTEDsyfcBzaFjSaIk0K",
+  model: "davinci:ft-personal-2023-04-19-09-13-52",
   apiKey: process.env.OPENAI_API_KEY,
 });
 
