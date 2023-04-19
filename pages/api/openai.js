@@ -8,7 +8,7 @@ export default async (req, res) => {
     if (req.body.prompt !== undefined) {
         try {
             const completion = await openai.createCompletion({
-                model: "davinci:ft-personal-2023-04-19-11-13-09",
+                model: "davinci:ft-personal-2023-04-19-20-52-53",
                 prompt: add(req.body.prompt),
                 max_tokens: 300,
             });
