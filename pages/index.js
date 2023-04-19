@@ -1,7 +1,5 @@
 import Head from 'next/head'
 
-import { openai } from './api/openai/config';
-
 import { useEffect, useState } from 'react';
 
 export default function Home() {
