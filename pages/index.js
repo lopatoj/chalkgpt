@@ -1,6 +1,6 @@
 import Head from 'next/head'
 
-//import { openai } from './api/openai/config';
+import { openai } from './api/openai/config';
 
 import { useEffect, useState } from 'react';
 
@@ -11,19 +11,19 @@ export default function Home() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if(document.getElementById("prompt").innerText === "") return;
+    if (document.getElementById("prompt").innerText === "") return;
 
     setLoading(true);
 
     const prompt = document.getElementById("prompt").innerText;
     document.getElementById("prompt").innerText = "";
 
-    // const completion = openai.complete({
-    //   engine: "davinci",
-    //   prompt: prompt,
-    // });
+    const completion = openai.complete({
+      engine: "davinci",
+      prompt: prompt,
+    });
 
-    setMessages([...messages, { prompt: prompt, response: "example response" }]);
+    setMessages([...messages, { prompt: prompt, response: completion.data.choices[0].text }]);
 
     console.log(messages);
     setLoading(false);
@@ -63,7 +63,7 @@ export default function Home() {
       </div>
       <div class="w-auto h-auto flex justify-center">
         <div class="w-1/3 font-mono pt-5">
-        {messages.length === 0 && <div class="text-center mt-10 text-3xl font-bold text-white font-sans">Enter a prompt to get started!</div>}
+          {messages.length === 0 && <div class="text-center mt-10 text-3xl font-bold text-white font-sans">Enter a prompt to get started!</div>}
           {messages.map((message) =>
             <div
               class="w-full p-5 mx-5 mt-5 rounded-md bg-emerald-800 shadow-md text-white transition-all hover:-tranemerald-y-1 hover:shadow-lg hover:bg-[rgb(89,63,47)]"
