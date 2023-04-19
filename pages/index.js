@@ -45,14 +45,14 @@ export default function Home() {
         <title>ChalkGPT</title>
       </Head>
       <div class="fixed bottom-0 w-min p-5">
-        <div class={`rounded p-3 bg-slate-800 transition-all shadow-md ${info ? "opacity-100" : "opacity-0"}`}>
+        <div class={`rounded-md p-3 bg-slate-800 transition-all shadow-md ${info ? "opacity-100" : "opacity-0"}`}>
           <p class="text-md text-gray-200 transition-all">Hello, this is my submission for my ISP.</p>
           <p class="text-md text-gray-200 mt-3 transition-all">It is a chatbot AI thing that {"(attempts)"} to imitate the writing style of Mr. Chalk.</p>
           <p class="text-md text-gray-200 mt-3 transition-all">To be honest, I am unsure of the morality of this.</p>
           <p class="text-md text-gray-200 mt-3 transition-all">Works best in Google Chrome.</p>
         </div>
-        <div class="p-4 mt-5 bg-slate-700 text-white shadow-md w-min rounded none transition-all">
-          <h1 class="text-2xl w-max">ChalkGPT, by Justin Lopato</h1>
+        <div class="p-4 mt-5 bg-slate-700 text-white shadow-md w-min rounded-md none transition-all">
+          <h1 class="text-2xl w-max font-bold">ChalkGPT by Justin Lopato</h1>
           <button class="pt-2 text-gray-400 text-left text-sm hover:text-white transition" onClick={toggle}>{"Click here to show information."}</button>
         </div>
       </div>
@@ -61,7 +61,7 @@ export default function Home() {
         {messages.length === 0 && <div class="text-center mt-10 text-3xl font-bold text-white font-sans">Enter a prompt to get started!</div>}
           {messages.map((message) =>
             <div
-              class="w-full p-5 mx-5 mt-5 rounded-md bg-slate-700 shadow-md text-white transition-all hover:-translate-y-1 hover:shadow-lg hover:bg-[#473946]"
+              class="w-full p-5 mx-5 mt-5 rounded-md bg-slate-800 shadow-md text-white transition-all hover:-translate-y-1 hover:shadow-lg hover:bg-[#302231]"
               style={{ cursor: "pointer" }}
               onClick={() => { setMessages(messages.filter((m) => m !== message)) }}
             >
