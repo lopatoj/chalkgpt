@@ -5,6 +5,4 @@ const configuration = new Configuration({
   organization: "org-I4tlqMCIWp6VH2uqe63Owqwi",
 });
 
-delete configuration.baseOptions.headers['User-Agent'];
-
 export const openai = new OpenAIApi(configuration);
