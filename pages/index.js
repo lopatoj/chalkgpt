@@ -18,14 +18,17 @@ export default function Home() {
     const prompt = document.getElementById("prompt").innerText;
     document.getElementById("prompt").innerText = "";
 
-    const completion = await openai.createChatCompletion({
-      model: "gpt-3.5-turbo",
-      messages: [{role: "user", content: prompt}],
+    const text = await fetch("/api/openai", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ prompt: prompt }),
     });
 
-    console.log(completion);
+    const data = await text.json();
 
-    setMessages([...messages, { prompt: prompt, response: completion.data.choices[0].message.content }]);
+    setMessages([...messages, { prompt: prompt, response: data.text }]);
 
     //console.log(messages[messages.length - 1]);
     setLoading(false);
