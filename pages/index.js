@@ -25,7 +25,7 @@ export default function Home() {
 
     setMessages([...messages, { prompt: prompt, response: completion.data.choices[0].text }]);
 
-    console.log(messages);
+    console.log(messages[messages.length-1]);
     setLoading(false);
   };
 
