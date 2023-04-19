@@ -18,7 +18,7 @@ export default function Home() {
     const prompt = document.getElementById("prompt").innerText;
     document.getElementById("prompt").innerText = "";
 
-    const completion = openai.complete({
+    const completion = await openai.createCompletion({
       engine: "davinci",
       prompt: prompt,
     });
