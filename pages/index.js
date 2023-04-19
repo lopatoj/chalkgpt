@@ -19,6 +19,7 @@ export default function Home() {
     document.getElementById("prompt").innerText = "";
 
     const completion = await openai.createCompletion({
+      model: "ft-5L292buSWulS99QcUMR1K8Re",
       engine: "davinci",
       prompt: prompt,
     });
