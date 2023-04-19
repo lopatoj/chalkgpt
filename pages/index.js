@@ -69,8 +69,9 @@ export default function Home() {
       <div class="w-auto h-auto flex justify-center">
         <div class="w-1/3 font-mono pt-5">
           {messages.length === 0 && <div class="text-center mt-10 text-3xl font-bold text-white font-sans">Enter a prompt to get started!</div>}
-          {messages.map((message) =>
+          {messages.map((message, messageIdx) =>
             <div
+              key={messageIdx}
               class="w-full p-5 mx-5 mt-5 rounded-md bg-emerald-800 shadow-md text-white transition-all hover:-tranemerald-y-1 hover:shadow-lg hover:bg-[rgb(89,63,47)]"
               style={{ cursor: "pointer" }}
               onClick={() => { setMessages(messages.filter((m) => m !== message)) }}
