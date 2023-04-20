@@ -1,15 +1,12 @@
 import { openai } from "./openai/config";
 
 export default async (req, res) => {
-    const add = (prompt) => {
-        return `This is an essay about ${prompt}, using vivid descriptions ;and complex rhetorical techniques:`;
-    }
 
     if (req.body.prompt !== undefined) {
         try {
             const completion = await openai.createCompletion({
                 model: "davinci:ft-personal-2023-04-19-20-52-53",
-                prompt: add(req.body.prompt),
+                prompt: req.body.prompt,
                 max_tokens: 300,
             });
 
