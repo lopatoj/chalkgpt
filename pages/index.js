@@ -70,9 +70,7 @@ export default function Home() {
           {messages.map((message, messageIdx) =>
             <div
               key={messageIdx}
-              class="w-full p-5 mx-5 mt-5 rounded-md bg-emerald-800 shadow-md text-white transition-all hover:-tranemerald-y-1 hover:shadow-lg hover:bg-[rgb(89,63,47)] break-words"
-              style={{ cursor: "pointer" }}
-              onClick={() => { setMessages(messages.filter((m) => m !== message)) }}
+              class="w-full p-5 mx-5 mt-5 rounded-md bg-emerald-800 shadow-md text-white transition-all hover:-tranemerald-y-1 hover:shadow-lg break-words"
             >
               <h3 class="font-semibold mb-4">User: {message.prompt}</h3>
               <p>Chalk: {message.response}</p>
