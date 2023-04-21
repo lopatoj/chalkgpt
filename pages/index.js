@@ -56,7 +56,7 @@ export default function Home() {
         <div class={`rounded-md p-3 bg-emerald-800 transition-all shadow-md ${info ? "opacity-100" : "opacity-0"}`}>
           <p className="text-md text-gray-200 transition-all">Hello, this is my submission for my ISP.</p>
           <p className="text-md text-gray-200 mt-3 transition-all">It is a chatbot AI thing that "attempts" to imitate the writing style of Mr. Chalk.</p>
-          <p className="text-md text-gray-200 mt-3 transition-all">Due to a lack of quality training data, it tends to produce a garbled output that somewhat resembles schoology assignments.</p>
+          <p className="text-md text-gray-200 mt-3 transition-all">Due to a lack of quality training data, is doesn't really do this at all.</p>
           <p className="text-md text-gray-200 mt-3 transition-all">Works "best" in Google Chrome.</p>
         </div>
         <div class="p-4 mt-5 bg-emerald-700 text-white shadow-md w-min rounded-md none transition-all">
